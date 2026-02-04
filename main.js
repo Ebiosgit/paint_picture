@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagePreview = document.getElementById('image-preview');
     const imageResult = document.getElementById('image-result');
     const generatePromptBtn = document.getElementById('generate-prompt-btn');
-    const generateImageBtn = document.getElementById('generate-image-btn');
     const promptLoader = document.getElementById('prompt-loader');
     const imageLoader = document.getElementById('image-loader');
 
@@ -30,15 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             generateAIPrompt(uploadedImageData);
         } else {
             alert('Please upload an image first.');
-        }
-    });
-
-    generateImageBtn.addEventListener('click', () => {
-        const prompt = generatedPrompt.textContent;
-        if (prompt && prompt !== 'Your generated prompt will appear here.') {
-            generateAIImage(prompt);
-        } else {
-            alert('Please generate a prompt first.');
         }
     });
 
@@ -78,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const prompt = `업로드한 원본 사진의 고유한 밝기, 색감, 조명 분위기와 [${analysis.실사_피사체}]는 수정 없이 완벽하게 원본 그대로 유지합니다. 이 사진 위에 손으로 그린 듯한 [삐뚤빼뚤한 색연필 질감의 스케치] 스타일의 라인 드로잉과 낙서 요소들을 오버레이 합니다. [${analysis.배경_요소들}]을 검은색 외곽선 스케치와 색연필 질감으로 표현하고, [${analysis.하늘_여백}]에는 [${analysis.추천_낙서_요소_하늘.join(", ")}]들을 추가하고, [${analysis.피사체}]에도 [${analysis.추천_낙서_요소_피사체.join(", ")}]을 추가해 주세요. 실사와 드로잉이 조화를 이루는 감성적인 포스터 스타일로 생성해 주세요.`;
 
             generatedPrompt.textContent = prompt;
+
+            // Automatically generate the image after the prompt is created
+            generateAIImage(prompt);
 
         } catch (error) {
             console.error('Error generating AI prompt:', error);

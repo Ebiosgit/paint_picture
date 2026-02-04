@@ -13,15 +13,15 @@ This project is a web application that allows users to upload an image, generate
 *   **Loading Indicators:** Visual feedback is provided to the user while the AI is processing the request.
 *   **Security Explanation:** The user is informed about the security risks of client-side API keys and the need for a backend server.
 *   **Custom Prompt Generation:** The application now uses a detailed, multi-step prompt generation rule to create artistic prompts for image generation.
+*   **Automatic Image Generation:** The image is now generated automatically after the prompt is created.
 
-## Current Task: Implement New Prompt Generation Rules
+## Current Task: Automatic Image Generation
 
 ### Plan
 
-1.  **Understand the new prompt generation rules:** The user has provided a detailed, multi-step process for generating prompts. (Completed)
-2.  **Update `generateAIPrompt` function:** Modify the JavaScript to generate a prompt based on the new rules, using a hypothetical image analysis as a placeholder. (Completed)
-3.  **Keep security warnings:** The explanation about the risks of client-side API calls is maintained. (Completed)
+1.  **Remove "Generate Image" button:** The user wants the image to be generated automatically. (Completed)
+2.  **Update JavaScript logic:** The `generateAIImage` function is now called automatically from `generateAIPrompt`. (Completed)
 
-## Project Status: Frontend Complete with Advanced Prompting
+## Project Status: Frontend Complete with Automatic Image Generation
 
-The frontend of the application is now complete. It provides a functional user interface and simulates the AI-powered image and prompt generation process, including a sophisticated, rule-based prompt generation system. The next step would be to build a backend server to handle the API calls to the AI models securely.
+The frontend of the application is now complete. It provides a functional user interface and simulates the AI-powered image and prompt generation process, with automatic image generation after the prompt is created. The next step would be to build a backend server to handle the API calls to the AI models securely.
