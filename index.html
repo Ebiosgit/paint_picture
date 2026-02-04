@@ -1,14 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Painter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header>
+        <h1>AI Image Painter</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="upload-section">
+                <h2>1. Upload an Image</h2>
+                <input type="file" id="image-upload" accept="image/*">
+                <div class="image-preview" id="image-preview">
+                    <img id="uploaded-image" src="" alt="Uploaded Image">
+                </div>
+            </div>
+            <div class="prompt-section">
+                <h2>2. Generate Prompt</h2>
+                <button id="generate-prompt-btn">Generate Prompt</button>
+                <div class="loader" id="prompt-loader" style="display: none;"></div>
+                <p id="generated-prompt">Your generated prompt will appear here.</p>
+            </div>
+            <div class="result-section">
+                <h2>3. Generate Image</h2>
+                <button id="generate-image-btn">Generate Image</button>
+                <div class="loader" id="image-loader" style="display: none;"></div>
+                <div class="image-result" id="image-result">
+                    <img id="generated-image" src="" alt="Generated Image">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
 </body>
 </html>
